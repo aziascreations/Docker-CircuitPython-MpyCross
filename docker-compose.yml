@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  mpy-cross-cpy:
+    container_name: mpy-cross-cpy
+    image: aziascreations/cpy-mpy-cross:8.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Git tag to which the repo is checked-out when cloning it.
+        # See: https://github.com/adafruit/circuitpython/tags
+        - CIRCUITPYTHON_GIT_TAG=8.1.0
+    environment:
+      # Custom UID and GID used when setting the ownership of the output files.
+      # If not defined, UID=0 and GID=0 will be used.
+      - PUID=1000
+      - PGID=1000
+      # Custom launch arguments passed as-is to `mpy-cross` for each file.
+      # Of only "-h" or "--help" is used, only the usage text will be shown.
+      - "MPY_CROSS_EXTRA_ARGS=-O1"
+    volumes:
+      - ./input:/data/input
+      - ./output:/data/output
+    restart: "no"
