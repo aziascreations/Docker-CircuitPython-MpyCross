@@ -6,9 +6,11 @@ automatically compiles any script you give it.
 These examples assume you are using `./input` and `./output` as your input and output folders.
 
 ### Available versions
-| Image & Tag                          | CircuitPython's release tag                                           |
-|--------------------------------------|-----------------------------------------------------------------------|
-| `aziascreations/mpy-cross-cpy:8.1.0` | [8.1.0](https://github.com/adafruit/circuitpython/releases/tag/8.1.0) |
+| Image & Tag                          | CircuitPython's release tag                                           | MPY Version |
+|--------------------------------------|-----------------------------------------------------------------------|-------------|
+| `aziascreations/cpy-mpy-cross:8.1.0` | [8.1.0](https://github.com/adafruit/circuitpython/releases/tag/8.1.0) | 5           |
+
+Any tag with the same *MPY version* should output the same files, or at least interoperable ones.
 
 All these images are also available for the following architectures:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`linux/amd64`, `linux/arm64/v8`
